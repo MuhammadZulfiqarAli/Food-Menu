@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Menu</title>
+</head>
+<style>
+      *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+      }
+      body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            
+      }
+      .container{
+            border: 1px solid rgba(48, 46, 46, 0.377);
+            border-radius: 15px;
+            box-shadow: 0 0 10px black;
+            width: 310px;
+            height: 310px;
+      background-color: rgb(240, 233, 223);
+      }
+
+      h3{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+      }
+      .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+         table{
+            width: 290px;
+            height: 220px;
+            margin-top: 5px;
+            
+         }
+      table ,th,td{
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      th{
+            background-color: rgb(224, 82, 82);
+            border-radius: 5px;
+      }
+      tr :hover{
+            background-color: rgb(245, 132, 132);
+      }
+      .input :hover{
+            background-color: bisque;
+      }
+      td{
+            background-color: rgba(0, 0, 0, 0.671);
+            color: white;
+            width: 100px;
+            text-align: center;
+            
+            border-radius: 5px;
+      }
+      .input{
+            display: flex;
+            justify-content: center;
+            align-items: center;     
+      }
+      input{
+            margin-top: 5px;
+            height: 40px;
+            width: 290px;
+            border-radius: 7px;
+            border: none;
+      }
+      
+</style>
+<body>
+      <div class="container">
+            <div class="deta">
+                  <h3>Food List</h3>
+            </div>
+            <div class="input"> 
+      <input type="text" name="" id="dropdown" placeholder="Mango,Pizza,Burger,salad">
+</div>
+<div class="box">
+       <table>
+            <tr> <th>Name </th> <td id="name"> </td>   </tr>
+          <tr> <th>Type </th>  <td   id="type">  </td> </tr>
+    
+      <tr>  <th>Quantity </th> <td id="quantity"> </td>  </tr>
+      <tr>   <th>Price  </th>  <td id="price"></td>   </tr>
+</table></div>
+  </div>
+      <script>
+
+          var drop =  document.getElementById("dropdown")
+          drop.addEventListener("change",function(){
+         var  userValue = drop.value
+   console.log(userValue);
+   var nameNode=document.getElementById("name")
+var typeNode=document.getElementById("type")
+ var quantityNode=document.getElementById("quantity")
+ var priceNode=document.getElementById("price")
+           
+var  Menu  = [{ 
+             Name : "mango",
+             details : {
+            Type:"fruit",
+              Quantity :  2,
+               Price:100,
+
+             }
+      } ,
+
+      {
+            Name : "burger",
+             details : {
+              Type:"Mac&Cheese",
+              Quantity : 2,
+               Price:200,
+             }
+      },
+      {
+            Name:"pizza",
+             details : { 
+      Type:"italian",
+      Quantity :  2,
+      Price:370
+             }
+      },
+      {
+            Name:"salad",
+             details : {
+      Type:"Veg",
+      Quantity :  2,
+      Price:50
+
+             }
+      },
+]   
+
+for (var i =0 ;i<Menu.length;i++){
+  if (Menu[i].Name == userValue){
+console.log(Menu[i].details);
+nameNode.innerText = Menu[i].Name
+typeNode.innerText = Menu[i].details.Type
+ quantityNode.innerText = Menu[i].details.Quantity
+ priceNode.innerText = Menu[i].details.Price
+
+ }}
+})
+</script>
+</body>
+</html>
